@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 
 //방법1->Potato.js를 밖에다가 두는 방법
 //import Potato from './Potato';
@@ -40,17 +40,20 @@ const foodILike =[
     name:'Bibimbap',
    image: 'https://d12zq4w4guyljn.cloudfront.net/300_300_20230730070746291_photo_YLHma8kK84vO.jpg',
    rating :4.5, 
-  }
+  },
 ];
 
 //{foodILike.map(dish => (<Food name={dish.name} picture={dish.image}/>)
-function Food(dish){
-  return <Food name ={dish.name} picture ={dish.image}/>
+function renderFood(dish) {
+  
+  return (
+    <Food
+      key={dish.id}
+      name={dish.name}
+      picture={dish.image}
+      rating={dish.rating}
+    />
+  );
 }
-//const renderFood = dish => <Food name ={dish.name} picture ={dish.image}/>
-//function App() {
-//return (<div>
-//</div>{foodILike.map(dish =>(Food key={dish.id} name ={dish.name} picture={dish.image}/>
-
 
 export default App;
